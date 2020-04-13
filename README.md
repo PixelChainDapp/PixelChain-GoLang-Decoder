@@ -1,4 +1,4 @@
-# PixelChain-GoLang-Decoder
+# PixelChain GoLang Decoder
 
 This is an open source implementation of the PixelChain decoder written in GoLang. The intention of it is to demostrate how the data is stored 100% on the blockchain and how it can be converted back to an image, in this case a PNG file.
 
