@@ -1,0 +1,5 @@
+{
+    "NetworkAddress": "https://mainnet.infura.io/v3/XXX",
+    "ContractAddress": "0xbc0e164ee423b7800e355b012c06446e28b1a29d",
+    "ImageStoragePath": "./images/"
+}
