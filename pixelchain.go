@@ -20,8 +20,8 @@ import (
 	store "github.com/pixelchaindapp/PixelChain-GoLang-Decoder/contracts"
 )
 
-const width = 32
-const height = 32
+const width int = 32
+const height int = 32
 
 // Configuration for the application
 type Configuration struct {
@@ -37,7 +37,7 @@ func main() {
 
 	ethID, err := strconv.ParseInt(os.Args[1], 10, 64)
 	if err != nil {
-		fmt.Printf("%q is not a valid eth id.\n", os.Args[1])
+		log.Fatalf("%q is not a valid eth id.\n", os.Args[1])
 	}
 
 	configuration, err := loadConfiguration()
@@ -70,9 +70,13 @@ func main() {
 }
 
 func loadConfiguration() (Configuration, error) {
-	file, _ := ioutil.ReadFile("./config.json")
+	file, err := ioutil.ReadFile("./config.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	configuration := Configuration{}
-	err := json.Unmarshal([]byte(file), &configuration)
+	err = json.Unmarshal([]byte(file), &configuration)
 	if err != nil {
 		return configuration, err
 	}
@@ -119,6 +123,10 @@ func generateImage(name string, path string, imgData []byte, colors []color.RGBA
 		}
 	}
 
-	f, _ := os.Create(fmt.Sprintf("%s%s.png", path, name))
+	f, err := os.Create(fmt.Sprintf("%s%s.png", path, name))
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	png.Encode(f, img)
 }
