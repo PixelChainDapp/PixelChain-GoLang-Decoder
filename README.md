@@ -8,15 +8,17 @@ Have GoLang installed and configured in your local environment. More information
 
 ## Install (Linux/OSX)
 
-Run the following commands
+Clone the repository and run the following commands
 
-`go get github.com/PixelChainDapp/PixelChain-GoLang-Decoder`
-
-`cd $GOPATH/src/github.com/PixelChainDapp/PixelChain-GoLang-Decoder/`
+`cd PixelChain-GoLang-Decoder`
 
 `cp config.json.dist config.json`
 
 Register in https://infura.io/ and create a project. Copy the `MAINNET` https endpoint assigned to your project an replace it in your `config.json` file under the `NetworkAddress` key.
+
+To run the application without build
+
+`go run pixelchain.go 0`
 
 To build the application run
 
@@ -24,7 +26,7 @@ To build the application run
 
 ## Run
 
-To run the application run the following in command line
+To run the application execute the following in command line
 
 `./pixelchain 0`
 
