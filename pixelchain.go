@@ -52,7 +52,7 @@ func main() {
 	fmt.Println(fmt.Sprintf("Connected to %s", configuration.NetworkAddress))
 
 	address := common.HexToAddress(configuration.ContractAddress)
-	instance, err := store.NewStore(address, client)
+	instance, err := store.NewContract(address, client)
 	if err != nil {
 		log.Fatal(err)
 	}
