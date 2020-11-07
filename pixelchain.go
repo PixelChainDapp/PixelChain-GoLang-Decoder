@@ -17,7 +17,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	store "github.com/pixelchaindapp/PixelChain-GoLang-Decoder/contracts"
+	store "github.com/PixelChainDapp/PixelChain-GoLang-Decoder/contracts"
 )
 
 const width int = 32
